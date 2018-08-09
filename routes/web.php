@@ -34,7 +34,7 @@ Route::patch('/api/classes/{id}', ['uses' => 'GoalController@updateClass']);
 Route::get('/api/classes/details/{id}', ['uses' => 'GoalController@getDetailsByID']);
 Route::post('/api/classes/details/{id}', ['uses' => 'GoalController@createNewSection']);
 Route::delete('/api/classes/details/{id}', ['uses' => 'GoalController@deleteSection']);
-// add patch route
+// add patch route for sections
 
 // api data routes for assignments table
 Route::post('/api/classes/details/assignments/{id}', ['uses' => 'GoalController@createNewAssignment']);
