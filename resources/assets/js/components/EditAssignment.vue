@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import errorComponent from './Errors.vue';
+    import errorComponent from './ValidationErrors.vue';
 
     export default {
         data:
@@ -58,7 +58,7 @@
                         'csrf': this.csrf
                     }
                 }).then((response)=> {
-                    if(response.data == 'OK')
+                    if(response.data === 'OK')
                         this.$emit('editSuccess');
                     else
                         this.displayErrors = response.data;

@@ -16,9 +16,12 @@
                 Max Score: <input type="text" name="maxScore" v-model="assignmentMaxScore">
                 Achieved Score: <input type="text" name="achievedScore" v-model="assignmentAchievedScore"><br>
 
-                <div style="color: red" v-for="errors in displayErrors">
-                    {{errors}}<br>
-                </div><br>
+                <!--<div style="color: red" v-for="errors in displayErrors">-->
+                    <!--{{errors}}<br>-->
+                <!--</div><br>-->
+
+                <errorComponent :errors="displayErrors"></errorComponent>
+
 
                 <input type="submit" value="Save">
             </form>
@@ -30,7 +33,7 @@
 </template>
 
 <script>
-    import Errors from './Errors';
+    import errorComponent from './ValidationErrors';
 
     export default {
         data: function(){
@@ -79,7 +82,7 @@
             }
         },
         components: {
-            Errors
+            errorComponent
         }
     }
 </script>

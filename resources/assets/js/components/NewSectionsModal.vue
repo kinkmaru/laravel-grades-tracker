@@ -10,9 +10,10 @@
                 <label for="sectionWeight">Section Weight: </label>
 
                  <input type="text" name="sectionWeight" v-model="sectionWeight"><br><br>
-                <div style="color: red" v-for="errors in displayErrors">
-                    {{errors}}<br>
-                </div><br>
+
+                <errorComponent :errors="displayErrors"></errorComponent>
+
+
                 <input type="submit" value="Add Section">
                 <input type="reset" value="Clear" v-on:click="clearErrors">
             </form>
@@ -24,6 +25,8 @@
 </template>
 
 <script>
+    import errorComponent from './ValidationErrors';
+
     export default {
         data: function () {
             return {
@@ -52,18 +55,9 @@
                         this.hideModal();
                     }
                     else {
-                        this.listErrors(response.data);
+                        this.displayErrors = response.data;
                     }
                 });
-            },
-            listErrors(errors){
-                this.displayErrors = [];
-                let count = 0;
-                for (let error in errors)
-                {
-                    this.displayErrors[count] = errors[error];
-                    count++;
-                }
             },
             showModal () {
                 this.$modal.show('createSection');
@@ -78,6 +72,9 @@
             clearErrors() {
                 this.displayErrors = [];
             },
+        },
+        components: {
+            errorComponent
         }
     }
 </script>

@@ -18,14 +18,12 @@
         },
         watch: {
             errors: function(){
-                debugger;
-                let test = '';
                 this.displayErrors = [];
                 let errors = this.errors;
                 let count = 0;
                 for (let error in errors)
                 {
-                    this.displayErrors[count] = errors[error];
+                    this.displayErrors.push (errors[error][0]);
                     count++;
                 }
             }

@@ -16,7 +16,12 @@
                         {{value}}
                     </td>
                     <td>
-                        <button class="btn btn-danger" v-on:click="deleteData(rowData.id)">Delete</button>
+                        <ConfirmDelete :deleteURI="setDeleteURI(rowData.id)"
+                                       :deleteName="rowData.name"
+                                       :modalID="rowData.id"
+                                       v-on:updateTable="$emit('updateTable')">
+                        </ConfirmDelete>
+
                         <EditDatabaseComponent :formData="rowData"
                                                :modalID="rowData.id"
                                                :actionPath="editPath + rowData.id"
@@ -38,6 +43,7 @@
 
 <script>
     import EditDatabaseComponent from './EditDatabaseComponent.vue';
+    import ConfirmDelete from './DeleteConfirm.vue';
 
     export default{
         data:
@@ -61,12 +67,6 @@
             this.lowercaseColumns();
         },
         methods: {
-            deleteData($id){
-                let uri = this.editPath + $id;
-                this.axios.delete(uri).then(() => {
-                    this.$emit('updateTable');
-                });
-            },
             lowercaseColumns(){
                 let result = [];
                 let col = this.columnData;
@@ -99,9 +99,13 @@
                     }
                 }
             },
+            setDeleteURI(id){
+                return '/api/classes/details/assignments/' + id;
+            }
         },
         components: {
             EditDatabaseComponent,
+            ConfirmDelete
         }
     }
 </script>

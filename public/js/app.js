@@ -487,9 +487,9 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Errors_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_ValidationErrors_vue__ = __webpack_require__(20);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_09c556e2_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Errors_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_856e650a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ValidationErrors_vue__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(0);
 var disposed = false
 /* script */
@@ -507,15 +507,15 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Errors_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_09c556e2_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Errors_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_09c556e2_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Errors_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_ValidationErrors_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_856e650a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ValidationErrors_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_856e650a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ValidationErrors_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Errors.vue"
+Component.options.__file = "resources/assets/js/components/ValidationErrors.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -524,9 +524,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-09c556e2", Component.options)
+    hotAPI.createRecord("data-v-856e650a", Component.options)
   } else {
-    hotAPI.reload("data-v-09c556e2", Component.options)
+    hotAPI.reload("data-v-856e650a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -1583,6 +1583,7 @@ if (false) {(function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EditDatabaseComponent_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__DeleteConfirm_vue__ = __webpack_require__(94);
 //
 //
 //
@@ -1621,6 +1622,12 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 
@@ -1645,14 +1652,6 @@ if (false) {(function () {
         this.lowercaseColumns();
     },
     methods: {
-        deleteData: function deleteData($id) {
-            var _this = this;
-
-            var uri = this.editPath + $id;
-            this.axios.delete(uri).then(function () {
-                _this.$emit('updateTable');
-            });
-        },
         lowercaseColumns: function lowercaseColumns() {
             var result = [];
             var col = this.columnData;
@@ -1678,10 +1677,14 @@ if (false) {(function () {
                     // red
                 }
             }
+        },
+        setDeleteURI: function setDeleteURI(id) {
+            return '/api/classes/details/assignments/' + id;
         }
     },
     components: {
-        EditDatabaseComponent: __WEBPACK_IMPORTED_MODULE_0__EditDatabaseComponent_vue__["a" /* default */]
+        EditDatabaseComponent: __WEBPACK_IMPORTED_MODULE_0__EditDatabaseComponent_vue__["a" /* default */],
+        ConfirmDelete: __WEBPACK_IMPORTED_MODULE_1__DeleteConfirm_vue__["a" /* default */]
     }
 });
 
@@ -1803,7 +1806,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Errors_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ValidationErrors_vue__ = __webpack_require__(2);
 //
 //
 //
@@ -1865,7 +1868,7 @@ if (false) {(function () {
         }
     },
     components: {
-        errorComponent: __WEBPACK_IMPORTED_MODULE_0__Errors_vue__["a" /* default */]
+        errorComponent: __WEBPACK_IMPORTED_MODULE_0__ValidationErrors_vue__["a" /* default */]
     }
 });
 
@@ -1894,13 +1897,11 @@ if (false) {(function () {
     },
     watch: {
         errors: function errors() {
-            debugger;
-            var test = '';
             this.displayErrors = [];
             var errors = this.errors;
             var count = 0;
             for (var error in errors) {
-                this.displayErrors[count] = errors[error];
+                this.displayErrors.push(errors[error][0]);
                 count++;
             }
         }
@@ -1912,7 +1913,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Errors_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ValidationErrors_vue__ = __webpack_require__(2);
 //
 //
 //
@@ -1974,12 +1975,12 @@ if (false) {(function () {
                     'csrf': this.csrf
                 }
             }).then(function (response) {
-                if (response.data == 'OK') _this.$emit('editSuccess');else _this.displayErrors = response.data;
+                if (response.data === 'OK') _this.$emit('editSuccess');else _this.displayErrors = response.data;
             });
         }
     },
     components: {
-        errorComponent: __WEBPACK_IMPORTED_MODULE_0__Errors_vue__["a" /* default */]
+        errorComponent: __WEBPACK_IMPORTED_MODULE_0__ValidationErrors_vue__["a" /* default */]
     }
 });
 
@@ -1988,7 +1989,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Errors_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ValidationErrors_vue__ = __webpack_require__(2);
 //
 //
 //
@@ -2061,7 +2062,7 @@ if (false) {(function () {
         }
     },
     components: {
-        Errors: __WEBPACK_IMPORTED_MODULE_0__Errors_vue__["a" /* default */]
+        Errors: __WEBPACK_IMPORTED_MODULE_0__ValidationErrors_vue__["a" /* default */]
     }
 });
 
@@ -2075,6 +2076,12 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__NewAssignmentModal_vue__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__AssignmentDetailsComponent__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__EditDatabaseComponent_vue__ = __webpack_require__(17);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2167,7 +2174,7 @@ if (false) {(function () {
         tableComponent: __WEBPACK_IMPORTED_MODULE_0__TableComponent_vue__["a" /* default */],
         sectionModalComponent: __WEBPACK_IMPORTED_MODULE_1__NewSectionsModal_vue__["a" /* default */],
         newAssignmentModalComponent: __WEBPACK_IMPORTED_MODULE_2__NewAssignmentModal_vue__["a" /* default */],
-        scoreDetailsComponent: __WEBPACK_IMPORTED_MODULE_3__AssignmentDetailsComponent__["a" /* default */],
+        assignmentDetailsComponent: __WEBPACK_IMPORTED_MODULE_3__AssignmentDetailsComponent__["a" /* default */],
         EditDatabaseComponent: __WEBPACK_IMPORTED_MODULE_4__EditDatabaseComponent_vue__["a" /* default */]
     }
 });
@@ -2177,6 +2184,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ValidationErrors__ = __webpack_require__(2);
 //
 //
 //
@@ -2202,6 +2210,9 @@ if (false) {(function () {
 //
 //
 //
+//
+
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
@@ -2232,17 +2243,9 @@ if (false) {(function () {
                     _this.$emit('updateTable');
                     _this.hideModal();
                 } else {
-                    _this.listErrors(response.data);
+                    _this.displayErrors = response.data;
                 }
             });
-        },
-        listErrors: function listErrors(errors) {
-            this.displayErrors = [];
-            var count = 0;
-            for (var error in errors) {
-                this.displayErrors[count] = errors[error];
-                count++;
-            }
         },
         showModal: function showModal() {
             this.$modal.show('createSection');
@@ -2257,6 +2260,9 @@ if (false) {(function () {
         clearErrors: function clearErrors() {
             this.displayErrors = [];
         }
+    },
+    components: {
+        errorComponent: __WEBPACK_IMPORTED_MODULE_0__ValidationErrors__["a" /* default */]
     }
 });
 
@@ -2265,7 +2271,10 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Errors__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ValidationErrors__ = __webpack_require__(2);
+//
+//
+//
 //
 //
 //
@@ -2348,7 +2357,7 @@ if (false) {(function () {
         }
     },
     components: {
-        Errors: __WEBPACK_IMPORTED_MODULE_0__Errors__["a" /* default */]
+        errorComponent: __WEBPACK_IMPORTED_MODULE_0__ValidationErrors__["a" /* default */]
     }
 });
 
@@ -2391,11 +2400,23 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
         return {
-            weight: ''
+            weight: '',
+            totalMaxScore: 0,
+            totalAchievedScore: 0,
+            totalGrade: 0,
+            totalWeight: 0,
+            totalWeightedGrade: 0
         };
     },
     props: {
@@ -2404,6 +2425,9 @@ if (false) {(function () {
         sectionCount: '',
         scoreHeaders: { type: Array, default: [] },
         modalID: Number
+    },
+    created: function created() {
+        this.tallyTotals(this.scoreDetails);
     },
     methods: {
         weightCalc: function weightCalc(total, actual) {
@@ -2417,6 +2441,30 @@ if (false) {(function () {
         },
         createModalID: function createModalID(id, string) {
             return string + id;
+        },
+        tallyTotals: function tallyTotals(scoreDetails) {
+            var mc = void 0,
+                ac = void 0,
+                g = void 0,
+                w = void 0,
+                wg = void 0,
+                count = void 0;
+            mc = ac = g = w = wg = count = 0;
+
+            scoreDetails.forEach(function (score) {
+                debugger;
+                mc += parseFloat(score['max_score']);
+                ac += parseFloat(score['achieved_score']);
+                g += parseFloat(score['grade']);
+                w += parseFloat(score['assignment_weight']);
+                wg += parseFloat(score['weighted_grade']);
+                count++;
+            });
+            this.totalMaxScore = mc.toFixed(2);
+            this.totalAchievedScore = ac.toFixed(2);
+            this.totalGrade = (g / count).toFixed(2);
+            this.totalWeight = w.toFixed(2);
+            this.totalWeightedGrade = wg.toFixed(2);
         }
     }
 });
@@ -18469,7 +18517,7 @@ render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-09c556e2", { render: render, staticRenderFns: staticRenderFns })
+    require("vue-hot-reload-api")      .rerender("data-v-856e650a", { render: render, staticRenderFns: staticRenderFns })
   }
 }
 
@@ -18862,18 +18910,18 @@ var render = function() {
               _c(
                 "td",
                 [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger",
-                      on: {
-                        click: function($event) {
-                          _vm.deleteData(rowData.id)
-                        }
-                      }
+                  _c("ConfirmDelete", {
+                    attrs: {
+                      deleteURI: _vm.setDeleteURI(rowData.id),
+                      deleteName: rowData.name,
+                      modalID: rowData.id
                     },
-                    [_vm._v("Delete")]
-                  ),
+                    on: {
+                      updateTable: function($event) {
+                        _vm.$emit("updateTable")
+                      }
+                    }
+                  }),
                   _vm._v(" "),
                   _c("EditDatabaseComponent", {
                     attrs: {
@@ -19342,13 +19390,7 @@ var render = function() {
             _c("br"),
             _c("br"),
             _vm._v(" "),
-            _vm._l(_vm.displayErrors, function(errors) {
-              return _c("div", { staticStyle: { color: "red" } }, [
-                _vm._v("\n                " + _vm._s(errors)),
-                _c("br")
-              ])
-            }),
-            _c("br"),
+            _c("errorComponent", { attrs: { errors: _vm.displayErrors } }),
             _vm._v(" "),
             _c("input", { attrs: { type: "submit", value: "Add Section" } }),
             _vm._v(" "),
@@ -19357,7 +19399,7 @@ var render = function() {
               on: { click: _vm.clearErrors }
             })
           ],
-          2
+          1
         ),
         _vm._v(" "),
         _c("br"),
@@ -19583,17 +19625,11 @@ var render = function() {
             }),
             _c("br"),
             _vm._v(" "),
-            _vm._l(_vm.displayErrors, function(errors) {
-              return _c("div", { staticStyle: { color: "red" } }, [
-                _vm._v("\n                " + _vm._s(errors)),
-                _c("br")
-              ])
-            }),
-            _c("br"),
+            _c("errorComponent", { attrs: { errors: _vm.displayErrors } }),
             _vm._v(" "),
             _c("input", { attrs: { type: "submit", value: "Save" } })
           ],
-          2
+          1
         ),
         _vm._v(" "),
         _c("br"),
@@ -19708,7 +19744,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -19752,48 +19788,64 @@ var render = function() {
         [
           _c("h2", [_vm._v("Assignment Details")]),
           _vm._v(" "),
-          _c("table", { staticClass: "table table-hover" }, [
-            _c(
-              "thead",
-              _vm._l(_vm.scoreHeaders, function(columns) {
-                return _c("th", [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(columns) +
-                      "\n                "
-                  )
-                ])
-              })
-            ),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              [
-                _vm._l(_vm.scoreDetails, function(assignments) {
-                  return _c("tr", [
-                    _c("td", [_vm._v(_vm._s(assignments.name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(assignments.max_score))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(assignments.achieved_score))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(assignments.grade))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(assignments.assignment_weight))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(assignments.weighted_grade))])
-                  ])
-                }),
+          _vm.scoreDetails.length >= 1
+            ? _c("table", { staticClass: "table table-hover" }, [
+                _c(
+                  "thead",
+                  _vm._l(_vm.scoreHeaders, function(columns) {
+                    return _c("th", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(columns) +
+                          "\n                "
+                      )
+                    ])
+                  })
+                ),
                 _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("Total")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("-Add Totals-")])
-                ])
-              ],
-              2
-            )
-          ]),
+                _c(
+                  "tbody",
+                  [
+                    _vm._l(_vm.scoreDetails, function(assignments) {
+                      return _c("tr", [
+                        _c("td", [_vm._v(_vm._s(assignments.name))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(assignments.max_score))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(assignments.achieved_score))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(assignments.grade))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(_vm._s(assignments.assignment_weight))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(assignments.weighted_grade))])
+                      ])
+                    }),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("Summary")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.totalMaxScore))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.totalAchievedScore))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.totalGrade))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.totalWeight))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.totalWeightedGrade))])
+                    ])
+                  ],
+                  2
+                )
+              ])
+            : _c("table", [
+                _vm._v(
+                  "\n            There no assignments to display.\n        "
+                )
+              ]),
           _vm._v(" "),
           _c(
             "button",
@@ -19837,34 +19889,44 @@ var render = function() {
     "div",
     { attrs: { id: "app" } },
     [
-      _vm._m(0),
+      _c(
+        "div",
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("sectionModalComponent", {
+            attrs: { showModal: _vm.canSee, sectionID: _vm.classID },
+            on: {
+              updateTable: function($event) {
+                _vm.getSectionData()
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("newAssignmentModalComponent", {
+            attrs: { showModal: _vm.canSee, modalData: _vm.sectionData },
+            on: {
+              updateTable: function($event) {
+                _vm.getSectionData()
+              }
+            }
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("sectionModalComponent", {
-        attrs: { showModal: _vm.canSee, sectionID: _vm.classID },
-        on: {
-          updateTable: function($event) {
-            _vm.getSectionData()
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("newAssignmentModalComponent", {
-        attrs: { showModal: _vm.canSee, modalData: _vm.sectionData },
-        on: {
-          updateTable: function($event) {
-            _vm.getSectionData()
-          }
-        }
-      }),
+      _c("hr"),
       _vm._v(" "),
       _vm._l(_vm.sectionData, function(sections) {
         return _c(
           "div",
           [
+            _c("b", [_vm._v(_vm._s(sections.section.name))]),
+            _c("br"),
+            _vm._v(" "),
             _c("b", [
               _vm._v(
-                _vm._s(sections.section.name) +
-                  " - " +
+                "Section Weight: " +
                   _vm._s(sections.section.section_weight) +
                   " "
               )
@@ -19879,7 +19941,7 @@ var render = function() {
                 ])
               : _c("b", [_vm._v("| Current Progress: No Entries")]),
             _vm._v(" "),
-            _c("scoreDetailsComponent", {
+            _c("assignmentDetailsComponent", {
               attrs: {
                 showModal: _vm.canSee,
                 scoreHeaders: _vm.assignmentDetailsHeaders,
@@ -19955,6 +20017,200 @@ module.exports = __webpack_require__(82);
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: function data() {
+        return {};
+    },
+    props: {
+        deleteURI: '',
+        deleteName: '',
+        modalID: ''
+
+    },
+    methods: {
+        showModal: function showModal() {
+            this.$modal.show('deleteConfirmModal' + this.modalID);
+        },
+        hideModal: function hideModal() {
+            this.$modal.hide('deleteConfirmModal' + this.modalID);
+        },
+        createModalID: function createModalID(id, string) {
+            return string + id;
+        },
+        deleteData: function deleteData() {
+            var _this = this;
+
+            var uri = this.deleteURI;
+            this.axios.delete(uri).then(function () {
+                _this.$emit('updateTable');
+            });
+            this.hideModal();
+        }
+    }
+});
+
+/***/ }),
+/* 94 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_DeleteConfirm_vue__ = __webpack_require__(93);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_56939124_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_DeleteConfirm_vue__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(0);
+var disposed = false
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_DeleteConfirm_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_56939124_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_DeleteConfirm_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_56939124_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_DeleteConfirm_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/DeleteConfirm.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-56939124", Component.options)
+  } else {
+    hotAPI.reload("data-v-56939124", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { display: "inline-block" } },
+    [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          on: {
+            click: function($event) {
+              _vm.showModal()
+            }
+          }
+        },
+        [_vm._v("Delete")]
+      ),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: { name: _vm.createModalID(_vm.modalID, "deleteConfirmModal") }
+        },
+        [
+          _c("h2", [
+            _vm._v("Are you sure you want to delete "),
+            _c("b", [_vm._v(_vm._s(_vm.deleteName))]),
+            _vm._v("?")
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              on: {
+                click: function($event) {
+                  _vm.deleteData()
+                }
+              }
+            },
+            [_vm._v("Yes")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              on: {
+                click: function($event) {
+                  _vm.hideModal()
+                }
+              }
+            },
+            [_vm._v("No")]
+          )
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-56939124", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
 
 /***/ })
 /******/ ]);

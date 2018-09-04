@@ -1,33 +1,39 @@
 <template>
     <div id="app">
-        <h2><u>Class Details</u></h2>
         <!-- Change section modal to create an overview of all sections ; ensure total reaches 100% -->
-        <sectionModalComponent :showModal="canSee"
-                               :sectionID="classID"
-                               v-on:updateTable="getSectionData()">
-        </sectionModalComponent>
+        <div>
+            <h2><u>Class Details</u></h2>
 
-        <newAssignmentModalComponent :showModal="canSee"
-                                     :modalData="sectionData"
-                                     v-on:updateTable="getSectionData()">
-        </newAssignmentModalComponent>
+            <sectionModalComponent :showModal="canSee"
+                                   :sectionID="classID"
+                                   v-on:updateTable="getSectionData()">
+            </sectionModalComponent>
+
+            <newAssignmentModalComponent :showModal="canSee"
+                                         :modalData="sectionData"
+                                         v-on:updateTable="getSectionData()">
+            </newAssignmentModalComponent>
+        </div>
+
+        <hr>
+
         <div v-for="sections in sectionData">
-            <b>{{sections.section.name }} - {{sections.section.section_weight}} </b>
-            <b v-if="sections.section.current_progress > 0">| Current Progress: {{sections.section.current_progress}}</b>
-            <b v-else="sections.section.section_weight <= 0">| Current Progress: No Entries</b>
+            <b>{{sections.section.name }}</b><br>
 
-            <scoreDetailsComponent :showModal="canSee"
+                <b>Section Weight: {{sections.section.section_weight}} </b>
+                <b v-if="sections.section.current_progress > 0">| Current Progress: {{sections.section.current_progress}}</b>
+                <b v-else="sections.section.section_weight <= 0">| Current Progress: No Entries</b>
+
+
+            <assignmentDetailsComponent :showModal="canSee"
                                    :scoreHeaders="assignmentDetailsHeaders"
                                    :scoreDetails="sections.assignment"
                                    :sectionWeight="sections.section.section_weight"
                                    :sectionCount="sections.assignment.length"
                                    :modalID="sections.section.id">
-            </scoreDetailsComponent>
-
-            <!--<EditDatabaseComponent :formData="sections.section"></EditDatabaseComponent>-->
+            </assignmentDetailsComponent>
 
             <button class="btn btn-danger" v-on:click="deleteData(sections.section.id)">Delete</button>
-
 
             <tableComponent :columnData="assignmentHeaders"
                             :tableData="sections.assignment"
@@ -44,7 +50,7 @@
     import tableComponent from './TableComponent.vue';
     import sectionModalComponent from './NewSectionsModal.vue';
     import newAssignmentModalComponent from './NewAssignmentModal.vue';
-    import scoreDetailsComponent from './AssignmentDetailsComponent';
+    import assignmentDetailsComponent from './AssignmentDetailsComponent';
     import EditDatabaseComponent from './EditDatabaseComponent.vue';
 
     export default {
@@ -81,13 +87,14 @@
                     this.sectionData = response.data;
                 });
             },
+
         },
         components: {
             tableComponent,
             sectionModalComponent,
             newAssignmentModalComponent,
-            scoreDetailsComponent,
-            EditDatabaseComponent
+            assignmentDetailsComponent,
+            EditDatabaseComponent,
         }
     }
 </script>

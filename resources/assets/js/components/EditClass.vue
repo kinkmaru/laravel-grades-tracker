@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    import errorComponent from './Errors.vue';
+    import errorComponent from './ValidationErrors.vue';
 
     export default {
         data:

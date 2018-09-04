@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import Errors from './Errors.vue';
+    import Errors from './ValidationErrors.vue';
 
     export default{
         data: function(){
