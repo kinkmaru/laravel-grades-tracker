@@ -1,7 +1,7 @@
 ## Grades Tracker
-Grades Tracker is a web laravel web application designed to help students more easily assess their performance throughout the term. The student will enter their class assessment weighted amounts a single time. As they enter their evaluations for each assignment in a given catergory, the program will calculate their performance.
+Grades Tracker is a web application written in laravel. It is designed to help students more easily assess their performance throughout the term. The student enters their class assessment weighted amounts a single time. As they enter their evaluations for each assignment in a given catergory, the program will calculate their performance.
 
-Many schools are using websites like Blackboard to track students grades as the term progresses, however these tools have the flaw of requiring the professors to manually enter the weight of each assignment. This tool is designed to simplify that process further, and from a students perspective, be able to evaluate their performance without the need of these websites.
+Many schools are using websites like Blackboard to track students grades as the term progresses, however these tools require the professors to manually enter the weight of each assignment. This tool is designed to simplify that process further, and from a students perspective, be able to evaluate their performance without the need of these websites.
 
 ### Example:
 
