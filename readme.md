@@ -6,11 +6,13 @@ Many schools are using websites like Blackboard to track students grades as the 
 ### Example:
 
 **Class assessment weights:**
+
 Quizzes - 10%
 Homework - 20%
 Exams (Mid/Final) - 70%
 
 **Student performance:**
+
 Quizzes:
 - 8/10
 - 9/10
