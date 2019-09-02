@@ -16,17 +16,17 @@ Quizzes:
 - 9/10
   
 Homework:
-  1 - 16/18
-  2 - 19/22
+- 16/18
+- 19/22
 
 Exams:
-  1 - 55/70
-  2 - 68/80
+- 55/70
+- 68/80
 
 **Grade Result:**
-  Quizzes - 85%
-  Homework - 92.5%
-  Exams - 82%
+- Quizzes: 85%
+- Homework: 92.5%
+- Exams: 82%
 
 Final Weighted Result - 84.4%
 
